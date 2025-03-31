@@ -15,3 +15,9 @@ print(int(1.7))
 #Aula 5 - Variaveis = atribuir valor a um nome
 nome_completo = 'Erasmo Carlos'
 print('o nome completo do cara é ' + nome_completo)
+
+#f-strings
+nome = 'Lirosvaldo'
+altura = 1.65
+linha_1 = f'{nome} tem {altura:.2f} de altura'
+print (linha_1)
