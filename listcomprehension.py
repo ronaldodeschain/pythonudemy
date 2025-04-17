@@ -1,7 +1,9 @@
 #list comprehension em Python
 #list comprehension é uma forma rapida de criar listas
 #a partir de iteraveis
-
+import pprint
+def p(v):
+    pprint.pprint(v,sort_dicts=False,width=40)
 #print(list(range(10)))
 '''
 lista = []
@@ -27,4 +29,15 @@ novos_produtos = [
     for produto in produtos
 ]
 #print(novos_produtos)
-print(* novos_produtos, sep='\n')
+#print(novos_produtos)
+#p(novos_produtos)
+#filtro
+#lista = [n for n in range(10)if n < 5]
+novos_produtos = [
+   {**produto,'preco':produto['preco']*1.05}
+   if produto['preco'] > 20 else {**produto}
+    for produto in produtos
+    if produto['preco'] > 10
+]
+p(novos_produtos)
+
