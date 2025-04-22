@@ -42,5 +42,15 @@ except Exception as e:
 finally:
    print('fechar arquivo')
    ///
-   '''
+ '''
+def nao_aceito_zero(d):
+     if d == 0:
+          raise ZeroDivisionError('nao pode dividr por zero')
+     return True
 
+def divide(n, d):
+   nao_aceito_zero(d)
+   return n / d
+    
+
+print(divide(8,0))
