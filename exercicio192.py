@@ -8,6 +8,7 @@
  # desfazer = [] -> Refazer ['caminhar', 'fazer café']
  # refazer = todo ['fazer café']
  # refazer = todo ['fazer café', 'caminhar']
+import os 
 
 def listar(tarefas):
     print()
@@ -62,6 +63,7 @@ while True:
         continue
     elif tarefa == 'desfazer':
         desfazer(tarefas,tarefas_refazer)
+        listar(tarefas)
         continue
     elif tarefa == 'refazer':
         refazer(tarefas,tarefas_refazer)
