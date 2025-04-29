@@ -76,19 +76,67 @@
 # c1.fotografar()
 
 #Atributos de Classe
-class Pessoa:
-    ano_atual = 2025
+# class Pessoa:
+#     ano_atual = 2025
 
+#     def __init__(self,nome,idade):
+#         self.nome = nome
+#         self.idade = idade
+    
+#     def get_ano_nascimento(self):
+#         return Pessoa.ano_atual - self.idade
+    
+# p1 = Pessoa('Joao',35)
+# p2 = Pessoa('Julia',27)
+
+# print(Pessoa.ano_atual)
+# print(p1.get_ano_nascimento())
+# print(p2.get_ano_nascimento())
+
+#thunderdict e vars 
+# class Pessoa:
+#     ano_atual = 2025
+
+#     def __init__(self,nome,idade):
+#         self.nome = nome
+#         self.idade = idade
+    
+#     def get_ano_nascimento(self):
+#         return Pessoa.ano_atual - self.idade
+    
+# dados = {'nome': 'Erasmo', 'idade': 69}
+# p1 = Pessoa(**dados)
+# #pode ser adicionados novos atributos
+# # p1.__dict__['outra'] = 'coisa'
+# # print(p1.__dict__)
+# # print()
+# # print('print das variaveis de p1: ')
+# print(vars(p1))
+# print(p1.nome)
+
+#Exercicio - Salve sua classe em Json
+#Salve os dados da sua classe em Json
+#e depois crie novamente as instancias
+#da classe com os dados salvos
+#Faça em arquivos separados.
+import json
+CAMINHO_ARQUIVO = 'aula127.json'
+
+class Pessoa:
     def __init__(self,nome,idade):
         self.nome = nome
         self.idade = idade
-    
-    def get_ano_nascimento(self):
-        return Pessoa.ano_atual - self.idade
-    
-p1 = Pessoa('Joao',35)
-p2 = Pessoa('Julia',27)
 
-print(Pessoa.ano_atual)
-print(p1.get_ano_nascimento())
-print(p2.get_ano_nascimento())
+p1 = Pessoa('Josue',15)
+p2 = Pessoa('Eustaquio',15)
+p3 = Pessoa('Robson',92)
+#Tanto Vars quanto dict funcionam ao enviar para o Json
+bd = [vars(p1),p2.__dict__,vars(p3)]
+
+def fazer_dump():
+    with open(CAMINHO_ARQUIVO,'w') as arquivo:
+        json.dump(bd,arquivo,ensure_ascii=False,indent=2)
+
+if __name__ == '__main__':
+    print('ele é o cara')
+    fazer_dump()
