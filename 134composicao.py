@@ -61,3 +61,29 @@
 # print(carrinho.total())
 
 #Composição
+# class Cliente:
+#     def __init__(self,nome):
+#         self.nome = nome
+#         self.enderecos = []
+
+#     def inserir_endereco(self,rua,numero):
+#         self.enderecos.append(Endereco(rua,numero))
+
+#     def lista_endereco(self):
+#         for endereco in self.enderecos:
+#             print(endereco.rua,endereco.numero)
+
+# class Endereco:
+#     def __init__(self,rua,numero):
+#         self.rua = rua
+#         self.numero = numero
+
+# cliente1 = Cliente('Maria')
+# cliente1.inserir_endereco('Suas', 1513)
+# cliente1.inserir_endereco('blaeas',54534)
+
+# # print(cliente1.enderecos[0].rua)
+# # print(cliente1.enderecos[1].rua)
+# cliente1.lista_endereco()
+
+# print('Fim do codigo')
