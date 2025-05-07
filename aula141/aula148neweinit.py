@@ -6,3 +6,15 @@
 # a instancia. Por isso, init recebe self.
 # __init__ !NÃO DEVE retornar nada(None)!
 # object é a super classe de uma classe.
+class A:
+    def __new__(cls,*args,**kwargs):
+        instancia = super().__new__(cls)
+        return instancia
+    
+    def __init__(self):
+        print('sou o init')
+
+    def __repr__(self):
+        return 'A()'
+    
+a = A()
