@@ -29,8 +29,15 @@ class MyOpen:
     def __exit__(self,class_exception,exception_,traceback_):
         print('FECHANDO ARQUIVO')
         self._arquivo.close()
+        
+        print(class_exception)
+        print(exception_)
+        print(traceback_)
+
+        return True #tratei a exceçào de alguma forma
 
 
 #retorno do enter vai para a variavel arquivo
 with MyOpen('aula149.txt','w') as arquivo:
     print('with',arquivo)
+    arquivo.write('Linha 1\n',123)
